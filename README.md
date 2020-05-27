@@ -2,7 +2,7 @@
 Testing Akka.Net  Cluster connectivity/reliability
 
 # Usage
-Set "akka.remote.dot-netty.tcp.hostname" in "ClusterTester.exe.config" to ip address of current machine or else the cluster won't startup correctly.<br>
+Set "akka.remote.dot-netty.tcp.hostname" in "ClusterTester.exe.config" to local ip address of current machine or else the cluster won't startup correctly.<br>
 Ensure that seed node is reachable from outside, so configure firewall appropriate for open port to the exe file.
 
 Run on seed node: `ClusterTester.exe 10000 10000 10.112.10.181 > _log.txt`
