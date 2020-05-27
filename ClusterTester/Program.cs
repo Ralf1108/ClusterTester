@@ -90,7 +90,7 @@ namespace ClusterTester
         {
             Receive<Ping>(x =>
             {
-                Console.WriteLine($"{Now()} - Send pong {x.Id}");
+                Console.WriteLine($"{Now()} - Send pong {x.Id} from {Sender}");
                 Sender.Tell(new Pong(x.Id));
             });
 
