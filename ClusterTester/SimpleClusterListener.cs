@@ -1,8 +1,9 @@
-﻿using Akka.Actor;
+﻿using System;
+using Akka.Actor;
 using Akka.Cluster;
 using Akka.Event;
 
-namespace Samples.Cluster.Simple
+namespace ClusterTester
 {
     public class SimpleClusterListener : UntypedActor
     {
@@ -32,14 +33,14 @@ namespace Samples.Cluster.Simple
                 case ClusterEvent.MemberUp up:
                 {
                     var mem = up;
-                    Log.Info("Member is Up: {0}", mem.Member);
+                    Console.WriteLine("Member is Up: {0}", mem.Member);
                     break;
                 }
                 case ClusterEvent.UnreachableMember unreachable:
-                    Log.Info("Member detected as unreachable: {0}", unreachable.Member);
+                    Console.WriteLine("Member detected as unreachable: {0}", unreachable.Member);
                     break;
                 case ClusterEvent.MemberRemoved removed:
-                    Log.Info("Member is Removed: {0}", removed.Member);
+                    Console.WriteLine("Member is Removed: {0}", removed.Member);
                     break;
                 case ClusterEvent.IMemberEvent _:
                     //IGNORE                

@@ -3,7 +3,6 @@ using System.Configuration;
 using Akka.Actor;
 using Akka.Configuration;
 using Akka.Configuration.Hocon;
-using Samples.Cluster.Simple;
 
 namespace ClusterTester
 {
